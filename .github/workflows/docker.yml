@@ -15,6 +15,11 @@ jobs:
 
     - name: Iniciar Docker
       run: docker info
+    
+    - name: Instalar Docker Compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install docker-compose -y
 
     - name: Construir imagen de Docker
       run: docker-compose build
