@@ -21,11 +21,8 @@ jobs:
         sudo apt-get update
         sudo apt-get install docker-compose -y
 
-    - name: Construir imagen de Docker
-      run: docker-compose build
-
-    - name: Ejecutar contenedor Docker
-      run: docker-compose up
+    - name: Construir imagen e iniciar el Docker
+      run: docker-compose up --build
       
     - name: Saludar
       run: echo "Se a detenido la ejecucion de los contenedores"
