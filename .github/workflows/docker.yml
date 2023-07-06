@@ -1,0 +1,26 @@
+name: Ejecutar Docker en push
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v2
+
+    - name: Iniciar Docker
+      run: docker info
+
+    - name: Construir imagen de Docker
+      run: docker-compose build
+
+    - name: Ejecutar contenedor Docker
+      run: docker-compose up
+      
+    - name: Saludar
+      run: echo "Se a detenido la ejecucion de los contenedores"
