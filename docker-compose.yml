@@ -3,7 +3,7 @@ version: '3'
 services:
   back:
     build:
-      context: ./FastApi
+      context: ./Backend
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
@@ -11,7 +11,7 @@ services:
       - db
   flask:
     build:
-      context: ./flask
+      context: ./Frontend
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
@@ -21,7 +21,7 @@ services:
     image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=db
+      - MYSQL_DATABASE=usersDb
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=admin
     ports:

@@ -1,0 +1,35 @@
+# Archivos y directorios generados por Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+$py.class
+
+# Archivos generados por herramientas de desarrollo
+.vscode/
+.idea/
+
+# Archivos generados por dependencias y entornos virtuales
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+*.egg
+*.egg-info
+*.pyc
+
+# Archivos de registro
+*.log
+
+# Archivos de configuración
+*.cfg
+*.ini
+
+# Archivos y directorios específicos de tu proyecto
+config.json
+secret_key.txt
+
+# Dependiendo de tus herramientas y entorno, puedes necesitar agregar más exclusiones aquí
