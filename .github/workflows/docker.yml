@@ -1,4 +1,4 @@
-name: Ejecutar Docker en push
+name: Ejecutar pruebas de Python en push
 
 on:
   push:
@@ -13,14 +13,20 @@ jobs:
     - name: Checkout del repositorio
       uses: actions/checkout@v2
 
-    - name: Iniciar Docker
-      run: docker info
+    - name: Configurar el entorno
+      run: |
+        python --version
+        pip --version
 
-    - name: Construir imagen de Docker
-      run: docker-compose build
+    - name: Instala las dependencias
+        # Instala las dependencias
+        pip install -r requirements.txt
+        # Asegúrate de que tienes un archivo requirements.txt con las dependencias de tu proyecto.
+    - name: Ejecutar pruebas
+      run: |
+        # Ejecuta tus pruebas de Python
+        pytest
+        # Asegúrate de que tengas pytest instalado y configurado para tu proyecto.
 
-    - name: Ejecutar contenedor Docker
-      run: docker-compose up
-      
     - name: Saludar
-      run: echo "Se a detenido la ejecucion de los contenedores"
+      run: echo "Se han ejecutado las pruebas de Python satisfactoriamente"
